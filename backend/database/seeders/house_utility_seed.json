@@ -1,0 +1,28 @@
+{
+  "bill": {
+    "for_month": "December",
+    "due_date": "2025-12-10",
+    "charges": {
+      "moyla": 0,
+      "water": 250.0,
+      "drinking_water": 0,
+      "gas": 100.0,
+      "electricity_units": 0,
+      "electricity_bill": 0,
+      "internet": 525.0,
+      "ac": 1000.0
+    },
+    "total": 1875.0,
+    "returned_amount": 0,
+    "final_total_amount": 1875.0
+  },
+  "base_settings": {
+    "moyla": 0,
+    "water": 500,
+    "drinking_water": 0,
+    "gas": 200,
+    "internet": 1050,
+    "ac": 2000,
+    "electricity_rate": 10
+  }
+}

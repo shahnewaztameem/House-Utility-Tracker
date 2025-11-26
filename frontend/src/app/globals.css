@@ -1,0 +1,283 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #1e293b;
+  --primary: #3b82f6;
+  --primary-dark: #2563eb;
+  --success: #10b981;
+  --warning: #f59e0b;
+  --danger: #ef4444;
+  --border: #e2e8f0;
+  --card-bg: #ffffff;
+  --sidebar-bg: #ffffff;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+body {
+  background: radial-gradient(circle at top left, #e0f2fe 0, #f8fafc 32%, #ffffff 55%, #eef2ff 100%);
+  color: var(--foreground);
+  font-family: var(--font-geist-sans), -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Sidebar menu styling */
+.ant-menu-light .ant-menu-item:hover,
+.ant-menu-light .ant-menu-item-active,
+.ant-menu-light .ant-menu-submenu-title:hover {
+  background-color: rgba(99, 102, 241, 0.08) !important;
+  color: #6366f1 !important;
+}
+
+.ant-menu-light .ant-menu-item-selected {
+  background-color: rgba(99, 102, 241, 0.12) !important;
+  color: #6366f1 !important;
+}
+
+.ant-menu-light .ant-menu-item-selected::after {
+  border-right-color: #6366f1 !important;
+}
+
+/* Top route progress bar (nprogress) */
+#nprogress {
+  pointer-events: none;
+}
+
+#nprogress .bar {
+  position: fixed;
+  z-index: 2000;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, #4f46e5, #0ea5e9, #22c55e);
+  box-shadow: 0 0 12px rgba(79, 70, 229, 0.6);
+}
+
+#nprogress .peg {
+  display: block;
+  position: absolute;
+  right: 0;
+  width: 100px;
+  height: 100%;
+  box-shadow: 0 0 10px #4f46e5, 0 0 5px #0ea5e9;
+  opacity: 1;
+  transform: rotate(3deg) translate(0, -4px);
+}
+
+#nprogress .spinner {
+  display: none;
+}
+
+/* Card gradient surfaces */
+.ant-card {
+  background: linear-gradient(145deg, #ffffff 0%, #f9fafb 40%, #eef2ff 100%);
+}
+
+
+/* Table compact styling */
+.table-compact .ant-table {
+  border-radius: 0 !important;
+  font-size: 12px;
+  border: 1px solid #d9d9d9 !important;
+  border-top: none !important;
+}
+
+.table-compact .ant-table-container {
+  border: none !important;
+  border-radius: 0 !important;
+}
+
+.table-compact .ant-table-wrapper {
+  border: none !important;
+  border-radius: 0 !important;
+}
+
+.table-compact .ant-table-thead > tr > th {
+  background-color: #1e293b !important;
+  color: #ffffff !important;
+  font-weight: 600;
+  border-radius: 0 !important;
+  padding: 8px 12px;
+  font-size: 12px;
+  line-height: 30px !important;
+  border-top: none !important;
+  border-bottom: none !important;
+  border-left: none !important;
+  border-right: none !important;
+}
+
+.table-compact .ant-table-thead > tr > th.ant-table-cell {
+  line-height: 30px !important;
+}
+
+.table-compact .ant-table-thead {
+  border-top: none !important;
+}
+
+.table-compact .ant-table-thead > tr {
+  border-top: none !important;
+}
+
+.table-compact .ant-table-thead > tr > th:first-child {
+  border-top-left-radius: 0 !important;
+  border-left: none !important;
+  border-top: none !important;
+}
+
+.table-compact .ant-table-thead > tr > th:last-child {
+  border-top-right-radius: 0 !important;
+  border-right: none !important;
+  border-top: none !important;
+}
+
+.table-compact .ant-table-thead > tr {
+  border-top: none !important;
+  border-bottom: none !important;
+}
+
+.table-compact .ant-table-tbody > tr > td {
+  font-size: 12px;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  margin-top: 5px !important;
+  margin-bottom: 5px !important;
+  border-right: 1px solid #d9d9d9 !important;
+  border-bottom: 1px solid #d9d9d9 !important;
+}
+
+.table-compact .ant-table-tbody > tr > td:last-child {
+  border-right: none !important;
+}
+
+.table-compact .ant-table-tbody > tr:last-child > td {
+  border-bottom: none !important;
+}
+
+/* Adjust Ant Design table header divider height */
+.ant-table-wrapper .ant-table-thead > tr > th:not(:last-child):not(.ant-table-selection-column):not(.ant-table-row-expand-icon-cell):not([colspan])::before,
+.ant-table-wrapper .ant-table-thead > tr > td:not(:last-child):not(.ant-table-selection-column):not(.ant-table-row-expand-icon-cell):not([colspan])::before {
+  height: 2.6rem !important;
+}
+
+/* Table summary styling for better visual separation */
+.ant-table-summary {
+  border-top: 2px solid #cbd5f5;
+}
+
+.ant-table-summary .ant-table-cell {
+  background: linear-gradient(135deg, #eef2ff, #e0f2fe) !important;
+  font-weight: 600;
+  color: #0f172a;
+}
+
+/* Remove top and bottom padding but add margin for spacing in all small table cells */
+.ant-table-wrapper .ant-table.ant-table-small .ant-table-title,
+.ant-table-wrapper .ant-table.ant-table-small .ant-table-footer,
+.ant-table-wrapper .ant-table.ant-table-small .ant-table-cell,
+.ant-table-wrapper .ant-table.ant-table-small .ant-table-thead > tr > th,
+.ant-table-wrapper .ant-table.ant-table-small .ant-table-tbody > tr > th,
+.ant-table-wrapper .ant-table.ant-table-small .ant-table-tbody > tr > td,
+.ant-table-wrapper .ant-table.ant-table-small tfoot > tr > th,
+.ant-table-wrapper .ant-table.ant-table-small tfoot > tr > td {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  margin-top: 5px !important;
+  margin-bottom: 5px !important;
+}
+
+.table-compact .ant-table-thead > tr > th {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  margin-top: 5px !important;
+  margin-bottom: 5px !important;
+}
+
+.table-compact .ant-table-tbody > tr > td .ant-btn {
+  font-size: 12px;
+  height: auto;
+  padding: 2px 8px;
+}
+
+.table-compact .ant-table-container {
+  border-radius: 0 !important;
+}
+
+.table-compact .ant-table-wrapper {
+  border-radius: 0 !important;
+}
+
+/* Compact button styling - all buttons small with good padding */
+.ant-btn {
+  padding: 4px 12px !important;
+  height: 28px !important;
+  font-size: 12px !important;
+  line-height: 1.5 !important;
+  min-height: 28px !important;
+}
+
+.ant-btn-sm {
+  padding: 4px 12px !important;
+  height: 28px !important;
+  font-size: 12px !important;
+  min-height: 28px !important;
+}
+
+.ant-btn-lg {
+  padding: 4px 12px !important;
+  height: 28px !important;
+  font-size: 12px !important;
+  min-height: 28px !important;
+}
+
+.ant-btn-icon-only {
+  padding: 4px 8px !important;
+  width: 28px !important;
+  min-width: 28px !important;
+  height: 28px !important;
+}
+
+.ant-btn-icon-only.ant-btn-sm {
+  padding: 4px 8px !important;
+  width: 28px !important;
+  min-width: 28px !important;
+  height: 28px !important;
+}
+
+.ant-btn-icon-only.ant-btn-lg {
+  padding: 4px 8px !important;
+  width: 28px !important;
+  min-width: 28px !important;
+  height: 28px !important;
+}
+
+.ant-btn > .anticon + span,
+.ant-btn > span + .anticon {
+  margin-left: 4px;
+}
+
+/* Mobile-first responsive utilities */
+@media (max-width: 640px) {
+  .table-compact .ant-table-thead > tr > th {
+    padding: 6px 8px;
+    font-size: 11px;
+  }
+  
+  .table-compact .ant-table-tbody > tr > td {
+    padding: 6px 8px;
+    font-size: 11px;
+  }
+}
