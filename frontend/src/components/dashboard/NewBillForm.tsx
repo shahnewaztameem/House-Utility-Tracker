@@ -390,10 +390,10 @@ export default function NewBillForm({
             type="button"
             className="px-6 py-2 text-sm font-semibold text-gray-700 bg-white border border-gray-300 rounded-lg hover:bg-gray-50 transition"
             onClick={() => {
+              const now = new Date();
               setForm({
-                month: new Date().toLocaleString('en-US', { month: 'long' }),
-                year: new Date().getFullYear(),
-                due_date: new Date().toISOString().split('T')[0],
+                for_month: `${now.toLocaleString('en-US', { month: 'long' })} ${now.getFullYear()}`,
+                due_date: now.toISOString().split('T')[0],
                 electricity_units: "",
                 electricity_rate: "",
                 returned_amount: "",

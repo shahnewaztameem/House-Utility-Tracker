@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
 import { ConfigProvider, App } from 'antd';
+import { Suspense } from 'react';
 import './globals.css';
 import { Providers } from '@/components/Providers';
 import RouteProgress from '@/components/layout/RouteProgress';
@@ -52,7 +53,9 @@ export default function RootLayout({
 					}}
 				>
 					<App>
-						<RouteProgress />
+						<Suspense fallback={null}>
+							<RouteProgress />
+						</Suspense>
 						<Providers>{children}</Providers>
 					</App>
 				</ConfigProvider>

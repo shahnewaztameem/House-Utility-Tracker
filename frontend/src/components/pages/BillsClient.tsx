@@ -199,7 +199,11 @@ export default function BillsClient() {
 				className="overflow-hidden"
 				title={<span className="text-lg font-semibold">Bills</span>}
 				extra={
-					<Button icon={<ReloadOutlined />} onClick={loadBills} loading={loading}>
+					<Button 
+						icon={<ReloadOutlined />} 
+						onClick={() => loadBills(pagination.current, pagination.pageSize)} 
+						loading={loading}
+					>
 						Refresh
 					</Button>
 				}
